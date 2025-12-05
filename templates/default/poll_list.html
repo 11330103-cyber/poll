@@ -9,7 +9,7 @@
     <h1>投票主體列表</h1>
     <ul>
         {% for poll in poll_list %}
-        <li>{{poll.created}}<a href="{% url 'poll_view' pol.id %}">{{poll.subject}}</a> </li>
+        <li>{{poll.created}}<a href="{% url 'poll_view' poll.id %}">{{poll.subject}}</a> </li>
         {% endfor %}
     </ul>
 </body>

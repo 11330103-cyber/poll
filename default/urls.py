@@ -5,5 +5,5 @@ urlpatterns = [
     path("",poll_list),
     path("list",polllist.as_view(),name='poll_list'),
     path("<int:pk>/",pollview.as_view(),name='poll_view'),
-    path('<int:pk>/vote',pollvote.as_view(),name='poll_vote'),
+    path('<int:oid>/vote',pollvote.as_view(),name='poll_vote'),
 ]
