@@ -21,5 +21,6 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("poll/",include("default.urls")),
+    path('account/',include("django.contrib.auth.urls")),  #django內建的帳號系統
     path('',RedirectView.as_view(url=reverse_lazy('poll_list')))
 ]

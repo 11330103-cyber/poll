@@ -6,6 +6,17 @@
     <title>{% block title %}Document{% endblock %}</title>
 </head>
 <body>
+    <div>
+        {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">登入</a>
+        {% else %}
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            Hi! {{ user }}
+            <input type="submit" value="登出">
+        </form>
+        {% endif %}
+    </div>
     {% block main %}{% endblock %}
     <h2>20424柯景允 製作</h2>
 </body>
